@@ -1,0 +1,12 @@
+{
+  "countdownTime" : 60,
+  "resetTime" : 21,
+  "isOn" : true,
+  "managers": [],
+  "draftLocation" :
+    {
+      "round" : 1,
+      "pick" : 1
+    }
+
+}
