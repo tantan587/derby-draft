@@ -5,7 +5,7 @@ export const countdownTime = (state=0, action) =>
   switch (action.type){
     case C.TICK_COUNTDOWN :
       return state - 1
-    case C.DRAFTED_PLAYER :
+    case C.DRAFTED_TEAM :
       return action.resetTime
     default :
       return state
@@ -20,7 +20,7 @@ export const resetTime = (state=5, action) =>
 export const isOn = (state=true, action) =>
 {
   switch (action.type){
-    case C.DRAFTED_PLAYER :
+    case C.DRAFTED_TEAM :
       return false
     case C.TICK_COUNTDOWN :
       return true
@@ -32,19 +32,18 @@ export const isOn = (state=true, action) =>
 export const draftLocation = (state= {}, action) =>
 {
   switch (action.type){
-    case C.DRAFTED_PLAYER :
-      return {round: 1, pick: 1}
-      /*return (action.draftLocation.pick < action.draftLocation.managers) ? 
+    case C.DRAFTED_TEAM :
+      return (action.draftLocation.pick < action.managers.length) ? 
       { round: action.draftLocation.round, 
-        pick: action.draftLocation.pick++ } :
-      { round: action.draftLocation.round++, 
-        pick: 1 }*/
+        pick: action.draftLocation.pick + 1 } :
+      { round: action.draftLocation.round + 1, 
+        pick: 1 }
     default :
       return state
     }
 }
 
-export const managers = (state={}, action) =>
+export const managers = (state=[], action) =>
 {
   switch (action.type)
   {

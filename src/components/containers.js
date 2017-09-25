@@ -7,7 +7,7 @@ import Countdown from './ui/Countdown'
 import DraftButton from './ui/DraftButton'
 import AddNewManager from './ui/AddNewManager'
 import DraftOrder from './ui/DraftOrder'
-import { tick, resetTimer, addManager, updateDraftInfo} from '../actions'
+import { tick, clickedDraftButton, addManager} from '../actions'
 /*import { sortFunction } from '../lib/array-helpers'*/
 
 export const Menu1 = connect(
@@ -48,22 +48,21 @@ export const CountdownBox= connect(
         ({
             onTick() {
                 dispatch(tick())
-            }/*,
-            onResetTimer(resetTime) {
-                dispatch(resetTimer(resetTime))
-            }*/
+            }
         })
 )(Countdown)
 
 export const DraftButtonBox= connect(
     state =>
         ({
-            resetTime : state.resetTime
+            resetTime : state.resetTime,
+             managers: state.managers,
+            draftLocation : state.draftLocation
         }),
     dispatch =>
         ({
-            onDraft(resetTime) {
-                dispatch(resetTimer(resetTime))
+            onDraft(resetTime, managers,draftLocation) {
+                dispatch(clickedDraftButton(resetTime,managers,draftLocation))
             }
         })
 )(DraftButton)
@@ -77,9 +76,7 @@ export const CenterPane1 = connect(
         }),
     dispatch =>
         ({
-            onDraft(managers,draftLocation) {
-                dispatch(updateDraftInfo(managers,draftLocation))
-            }
+            
         })
 )(CenterPane)
 

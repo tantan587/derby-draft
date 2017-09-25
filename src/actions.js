@@ -6,10 +6,12 @@ export const tick = () =>
       type: C.TICK_COUNTDOWN
   })
 
-export const resetTimer = (resetTime) =>
+export const clickedDraftButton = (resetTime,managers,draftLocation) =>
   ({
-      type: C.DRAFTED_PLAYER,
-      resetTime
+      type: C.DRAFTED_TEAM,
+      resetTime,
+      managers,
+      draftLocation
   })
 
 export const addManager = (name, draftPick) =>
@@ -20,9 +22,3 @@ export const addManager = (name, draftPick) =>
       draftPick
   })
 
-export const updateDraftInfo = (managers, draftLocation) =>
-  ({
-      type: C.DRAFTED_PLAYER,
-      managers,
-      draftLocation
-  })
