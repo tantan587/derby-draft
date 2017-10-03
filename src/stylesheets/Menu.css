@@ -7,6 +7,11 @@ div.left-pane {
 div.center-pane {
     padding: 1rem;
     background: #ECF0F1;
+    display: block;
+    text-align: center;
+    font-size: 1.25em;
+    font-family:  Arial;
+    background: gray;
 }
 div.right-pane {
     padding: 1rem;
@@ -27,14 +32,6 @@ div.right-pane {
 	padding: 0.5em;
 
 }*/
-
-div.menu {
-        padding: 1rem;
-        background: #111;
-        height: 4rem;
-        color: #fff;
-    }
-
 div.timer {
   height: calc(100% - 2.5em);
   border: 0.25em double green;
@@ -54,6 +51,24 @@ div.timer span {
   font-size: 0.5em;
 }
 
+nav.draft-button {
+  height: calc(100% - 2.5em);
+  border: 0.25em double green;
+  color: blue;
+  border-radius: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Knewave", fantasy, Arial;
+  font-size: 5em;
+  background: gray;
+  cursor: pointer;
+}
+
+nav.draft-button:hover { 
+    background-color: yellow;
+}
+
 
 div.draft-order
 {
@@ -68,7 +83,30 @@ div.draft-order-name
 {
     display: block;
     text-align: center;
-    font-size: 0.75em;
+    font-size: 1em;
     font-family:  Arial;
     background: gray;
+    padding: 0.25rem;
 }
+
+div.menu-bar{
+        padding: 1rem;
+        background: #111;
+        height: 4rem;
+        color: #fff;
+    }
+
+div.derby
+{
+  width:60;
+  height:60;
+  float: left;
+}
+
+div.menu {
+        padding: 1rem;
+        background: #111;
+        height: 60;
+        color: #fff;
+        text-align: center
+    }

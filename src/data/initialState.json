@@ -1,12 +1,118 @@
 {
-  "countdownTime" : 60,
+  "countdownTime" : 10,
   "resetTime" : 21,
   "isOn" : true,
-  "managers": [],
+  "managers": [
+    {"id": "681814cd-2231-4aab-8a6d-9dc87b44923c", "name": "yoni", "portfolio" :[]},
+    {"id": "5ea74993-5b58-405c-9179-a3629b8edda0", "name": "matt", "portfolio" :[]},
+    {"id": "d6ee6ab9-3316-4cfb-a03a-9ba799d332c0", "name": "camila", "portfolio" : []},
+    {"id": "fac6b4b8-df6e-46f7-b8c0-9d58a1237034", "name": "perry", "portfolio" :[]}
+    ],
   "draftLocation" :
     {
-      "round" : 1,
-      "pick" : 1
-    }
+      "round" : 0,
+      "pick" : 0,
+      "overallPick" : 0,
+      "totalRounds" : 8
+    },
+  "draftOrder" : ["681814cd-2231-4aab-8a6d-9dc87b44923c", 
+                  "5ea74993-5b58-405c-9179-a3629b8edda0",
+                  "d6ee6ab9-3316-4cfb-a03a-9ba799d332c0",
+                  "fac6b4b8-df6e-46f7-b8c0-9d58a1237034"],
+  "draftTabs" : {"mainTab" : "TEAMS", "subTabNum" : 0},
+  "queue" : [],
+  "teams" : 
+  [
+      {
+        "team": "Boston Celtics",
+        "id": "cc68c64b-72ae-4797-a104-70be56ae12f9",
+        "league" : "NBA",
+        "lastYearRecord": "53-29",
+        "totalPoints" : 100,
+        "projectedPoints" : 500,
+        "draftedBy": ""
 
+      },
+      {
+        "team": "New York Knicks",
+        "id": "569eeba9-75bd-4326-aada-e66b910ff3fa",
+        "league" : "NBA",
+        "lastYearRecord": "53-29",
+        "totalPoints" : 76,
+        "projectedPoints" : 200,
+        "draftedBy": ""
+      },
+      {
+        "team": "Dallas Mavericks",
+        "id": "41028c3c-3d07-4a82-bec8-707d27faaabe",
+        "league" : "NBA",
+        "lastYearRecord": "53-29",
+        "totalPoints" : 90,
+        "projectedPoints" : 12,
+        "draftedBy": ""
+      },
+      {
+        "team": "Chicago Bulls",
+        "id": "4f7e9d76-e388-46de-b891-392c8ec386b7",
+        "league" :"NBA",
+        "lastYearRecord": "53-29",
+        "totalPoints" : 65,
+        "projectedPoints" : 43,
+        "draftedBy": ""
+      },
+      {
+        "team": "Los Angeles Lakers",
+        "id": "60efafe7-87d0-437e-aba1-d3c535414fe1",
+        "league" : "NBA",
+        "lastYearRecord": "53-29",
+        "totalPoints" : 123,
+        "projectedPoints" : 432,
+        "draftedBy": ""
+      },
+      {
+        "team": "New England Patriots",
+        "id": "b172812e-2334-4f6a-921c-5f9a0e7f54a7",
+        "league" : "NFL",
+        "lastYearRecord": "14-2",
+        "totalPoints" : 500,
+        "projectedPoints" : 5000,
+        "draftedBy": ""
+      },
+      {
+        "team": "New York Jets",
+        "id": "28d9ba59-3b33-4daf-a855-20b15513e7bf",
+        "league" : "NFL",
+        "lastYearRecord": "53-29",
+        "totalPoints" : 100,
+        "projectedPoints" : 0,
+        "draftedBy": ""
+      },
+      {
+        "team": "Dalls Cowboys",
+        "id": "d35c57fb-618a-4818-888f-086a5a58e36b",
+        "league" : "NFL",
+        "lastYearRecord": "53-29",
+        "totalPoints" : 200,
+        "projectedPoints" : 200,
+        "draftedBy": ""
+      },
+      {
+        "team": "Chicago Bears",
+        "id": "094aef8d-29f4-4a72-9d06-61d8d37bbffe",
+        "league" : "NFL",
+        "lastYearRecord": "53-29",
+        "totalPoints" : 100,
+        "projectedPoints" : 500,
+        "draftedBy": ""
+      },
+      {
+        "team": "Los Angeles Rams",
+        "id": "5b22863d-2410-4dac-b4d6-49c512eb0ef4",
+        "league" : "NFL",
+        "lastYearRecord": "53-29",
+        "totalPoints" : 555,
+        "projectedPoints" : 87,
+        "draftedBy": ""
+      }
+  ]
 }

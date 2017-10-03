@@ -1,12 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import '../../stylesheets/Menu.css'
-
-
-
+import derby from '../../images/derby.jpg'
 
 const Menu = ({}) =>
-  <div className="menu">Menu</div>
+{
+  return (
+  <div className="menu-bar">
+    <div className="derby">
+      <img src={derby} alt="" style={{width: 60, height: 60}}/>
+    </div>
+    <div className="menu">MENU</div>
+  </div>
+  
+  )
+}
           /*<div className="menu">
             <div  onClick={e => {
                    e.preventDefault()

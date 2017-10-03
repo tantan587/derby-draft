@@ -6,6 +6,6 @@ import '../../stylesheets/Menu.css'
 
 
 const RightPane = ({}) =>
-  <div className="right-pane">Right</div>
+  <div className="right-pane"></div>
 
 export default RightPane

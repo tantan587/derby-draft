@@ -17,6 +17,47 @@ export const resetTime = (state=5, action) =>
   return state
 }
 
+export const queue = (state=[], action) =>
+{
+  switch (action.type){
+    case C.ADD_TEAM_TO_QUEUE :
+     return [
+      ...state,
+      action.teamId
+      ]
+    case C.REMOVE_TEAM_FROM_QUEUE :
+      return state.filter(q=> q !== action.teamId)
+    case C.DRAFTED_TEAM :
+       return state.filter(q=> q !== action.teamId) 
+    default :
+      return state
+    }
+}
+
+export const teams = (state=[], action) =>
+{
+  switch (action.type){
+    case C.DRAFTED_TEAM :
+      return state.map(t => team(t,action))
+    default :
+      return state
+    }
+}
+
+export const team = (state={}, action) =>
+{
+  switch (action.type){
+    case C.DRAFTED_TEAM :
+      return (state.id !== action.teamId) ?
+        state : {
+          ...state,
+          draftedBy : action.managerId
+        }
+    default :
+      return state
+    }
+}
+
 export const isOn = (state=true, action) =>
 {
   switch (action.type){
@@ -33,16 +74,49 @@ export const draftLocation = (state= {}, action) =>
 {
   switch (action.type){
     case C.DRAFTED_TEAM :
-      return (action.draftLocation.pick < action.managers.length) ? 
-      { round: action.draftLocation.round, 
-        pick: action.draftLocation.pick + 1 } :
-      { round: action.draftLocation.round + 1, 
-        pick: 1 }
+      return (state.pick < action.managersLength - 1) ? 
+      { round: state.round, 
+        pick: state.pick + 1,
+        overallPick: state.overallPick + 1,
+        totalRounds : state.totalRounds } :
+      { round: state.round + 1, 
+        pick: 0,
+        overallPick: state.overallPick + 1,
+        totalRounds : state.totalRounds}
+    case C.RESET_DRAFT :
+       return { round: 0, 
+        pick: 0,
+        overallPick: 0,
+        totalRounds : state.totalRounds} 
     default :
       return state
     }
 }
 
+export const draftOrder = (state = [], action) =>
+{
+  switch (action.type){
+    case C.ADD_MANAGER : 
+      return [
+      ...state,
+      action.id
+      ]
+    default :
+      return state
+  }
+}
+
+export const draftTabs = (state={}, action) =>
+{
+  switch (action.type) {
+        case C.TOGGLE_DRAFT_DISPLAY:
+            return {mainTab: action.mainTabDisplay, subTabNum: 0}
+        case C.TOGGLE_SUB_TAB_NUM:
+            return {mainTab: state.mainTab, subTabNum: action.subTabNumDisplay}
+        default :
+            return state
+    }
+}
 export const managers = (state=[], action) =>
 {
   switch (action.type)
@@ -52,7 +126,8 @@ export const managers = (state=[], action) =>
       ...state,
       manager({},action)
       ]
-      
+     case C.DRAFTED_TEAM :
+      return state.map(m => manager(m,action)) 
      default :
       return state
   }
@@ -67,6 +142,12 @@ export const manager = (state={}, action) =>
         id : action.id,
         name : action.name
      }
+    case C.DRAFTED_TEAM :
+      return (state.id !== action.managerId) ?
+        state : {
+          ...state,
+          portfolio : [...state.portfolio, action.teamId]
+        }
     default :
       return state
   }
